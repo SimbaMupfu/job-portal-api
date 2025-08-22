@@ -24,4 +24,8 @@ public class JobService {
     public JobPost getJob(int postId) {
         return jobRepository.findJob(postId);
     }
+
+    public void updateJob(JobPost jobPost) {
+        jobRepository.updateJob(jobPost);
+    }
 }
