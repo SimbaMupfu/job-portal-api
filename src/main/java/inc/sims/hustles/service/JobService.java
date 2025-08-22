@@ -28,4 +28,8 @@ public class JobService {
     public void updateJob(JobPost jobPost) {
         jobRepository.updateJob(jobPost);
     }
+
+    public boolean deleteJob(int postId) {
+        return jobRepository.deleteJob(postId);
+    }
 }
