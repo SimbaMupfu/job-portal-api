@@ -4,6 +4,7 @@ import inc.sims.hustles.model.JobPost;
 import inc.sims.hustles.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -17,5 +18,10 @@ public class JobController {
     @GetMapping("job_posts")
     public List<JobPost> getAllJobs(){
         return jobService.getAllJobs();
+    }
+
+    @GetMapping("job_post/{post_id}")
+    public JobPost getJobPost(@PathVariable("post_id") int postId){
+        return jobService.getJob(postId);
     }
 }
