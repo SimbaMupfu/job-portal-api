@@ -52,4 +52,8 @@ public class JobService {
         ));
         jobRepository.saveAll(initialJobsData);
     }
+
+    public List<JobPost> search(String keyword){
+        return jobRepository.findByPostProfileContainingOrPostDescContaining(keyword, keyword);
+    }
 }

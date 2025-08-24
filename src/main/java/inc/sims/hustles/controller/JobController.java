@@ -45,4 +45,9 @@ public class JobController {
         jobService.saveMultipleJobs();
         return jobService.getAllJobs();
     }
+
+    @PostMapping("job_posts/keyword/{keyword}")
+    public List<JobPost> searchJobPosts(@PathVariable("keyword") String keyword){
+        return jobService.search(keyword);
+    }
 }
