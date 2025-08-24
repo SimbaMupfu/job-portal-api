@@ -39,4 +39,10 @@ public class JobController {
     public void deleteJobPost(@PathVariable("post_id") int postId){
         jobService.deleteJob(postId);
     }
+
+    @GetMapping("load")
+    public List<JobPost> loadJobs() {
+        jobService.saveMultipleJobs();
+        return jobService.getAllJobs();
+    }
 }
