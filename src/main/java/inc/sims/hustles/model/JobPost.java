@@ -1,5 +1,6 @@
 package inc.sims.hustles.model;
 
+import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Component
+@Entity
 public class JobPost {
 
     private int postId;
