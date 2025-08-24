@@ -36,12 +36,7 @@ public class JobController {
     }
 
     @DeleteMapping("job_post/{post_id}")
-    public String deleteJobPost(@PathVariable("post_id") int postId){
-        boolean deleteJobPostResult = jobService.deleteJob(postId);
-        if(deleteJobPostResult){
-            return "Post successfully deleted";
-        }else {
-            return "Post could not be deleted";
-        }
+    public void deleteJobPost(@PathVariable("post_id") int postId){
+        jobService.deleteJob(postId);
     }
 }
